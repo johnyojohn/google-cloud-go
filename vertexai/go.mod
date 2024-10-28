@@ -1,4 +1,4 @@
-module cloud.google.com/go/vertexai
+module github.com/johnyojohn/google-cloud-go/vertexai
 
 go 1.21
 
