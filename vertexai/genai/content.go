@@ -135,6 +135,8 @@ func (c *GenerationConfig) SetTopP(x float32) { c.TopP = &x }
 // SetTopK sets the TopK field.
 func (c *GenerationConfig) SetTopK(x int32) { c.TopK = &x }
 
+func (c *GenerationConfig) SetAudioTimestamp(x bool) { c.AudioTimestamp = &x }
+
 // FunctionCalls return all the FunctionCall parts in the candidate.
 func (c *Candidate) FunctionCalls() []FunctionCall {
 	if c.Content == nil {

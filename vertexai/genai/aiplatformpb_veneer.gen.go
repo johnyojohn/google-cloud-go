@@ -677,6 +677,9 @@ type GenerationConfig struct {
 	// Compatible mimetypes:
 	// `application/json`: Schema for JSON response.
 	ResponseSchema *Schema
+	AudioTimestamp *bool
+
+
 }
 
 func (v *GenerationConfig) toProto() *pb.GenerationConfig {
@@ -694,6 +697,7 @@ func (v *GenerationConfig) toProto() *pb.GenerationConfig {
 		FrequencyPenalty: v.FrequencyPenalty,
 		ResponseMimeType: v.ResponseMIMEType,
 		ResponseSchema:   v.ResponseSchema.toProto(),
+		AudioTimestamp:   v.AudioTimestamp,
 	}
 }
 
@@ -712,6 +716,7 @@ func (GenerationConfig) fromProto(p *pb.GenerationConfig) *GenerationConfig {
 		FrequencyPenalty: p.FrequencyPenalty,
 		ResponseMIMEType: p.ResponseMimeType,
 		ResponseSchema:   (Schema{}).fromProto(p.ResponseSchema),
+		AudioTimestamp:   p.AudioTimestamp,
 	}
 }
 
